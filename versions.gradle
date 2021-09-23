@@ -1,0 +1,246 @@
+ext.deps = [:]
+
+/* versions */
+def versions = [:]
+versions.kotlin = '1.5.21'
+
+versions.coroutines = '1.4.2'
+
+versions.json = '1.0.1'
+
+versions.appcompat = '1.3.0-alpha02'
+
+versions.activity = '1.2.0-rc01'
+
+versions.fragment = '1.3.0-beta02'
+
+versions.core_ktx = '1.3.2'
+
+versions.lifecycle = '2.3.0-rc01'
+
+versions.room = '2.2.5'
+
+versions.ktlint = '10.0.0'
+
+versions.material = '1.2.1'
+
+versions.constraintlayout = '2.0.4'
+
+versions.swiperefreshlayout = '1.1.0'
+
+versions.recyclerview = '1.1.0'
+
+versions.viewpager2 = '1.1.0-alpha01'
+
+versions.ultraviewpager = '1.0.7.8@aar'
+
+versions.navigation = '2.3.2'
+
+versions.koin = '3.1.2'
+
+versions.retrofit = '2.9.0'
+versions.okhttp = '4.10.0-RC1'
+versions.stetho = '1.5.1'
+
+versions.epoxy = '4.4.3'
+versions.epoxy_paging = '4.4.3'
+versions.fresco = '2.3.0'
+versions.ultraviewpager = '1.0.7.8@aar'
+versions.slidinguppanel = '3.4.0'
+versions.easing = '1.0.3'
+versions.annotation = '1.1.0'
+
+versions.gson = '2.8.6'
+
+versions.moshi = '1.12.0'
+
+versions.lottie = '3.6.0'
+
+versions.flexbox = '2.0.1'
+
+versions.flowbinding = '1.0.0'
+
+versions.junit_version = '4.12'
+versions.ext_junit_version = '1.1.1'
+versions.espresso_version = '3.3.0'
+
+versions.crashlytics = '2.4.1'
+versions.firebase = '26.2.0'
+versions.firebase_messaging = '19.0.1'
+versions.firebase_core = '17.0.1'
+versions.playservice = '19.0.0'
+
+versions.flowlayout = '1.8.0'
+versions.flow = '3.1.0'
+versions.facebook = '7.1.0'
+versions.kakao = '1.27.0'
+versions.naveridlogin = '4.2.6'
+
+versions.pickerDialog = '1.0.1'
+
+versions.braze = '13.0.+'
+
+versions.amplitude = '2.29.1'
+
+versions.facebook = '8.0.0'
+
+versions.appsflyer = '5.4.4'
+
+versions.installreferrer = '2.2'
+
+versions.timber_version = '4.7.1'
+
+versions.exifinterface = '1.3.2'
+
+def kotlin = [:]
+kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+kotlin.json = "org.jetbrains.kotlinx:kotlinx-serialization-json:$versions.json"
+deps.kotlin = kotlin
+
+deps.coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
+
+deps.ktlint = "org.jlleitschuh.gradle:ktlint-gradle:$versions.ktlint"
+
+deps.appcompat = "androidx.appcompat:appcompat:$versions.appcompat"
+
+deps.activity_ktx = "androidx.activity:activity-ktx:$versions.activity"
+
+deps.fragment_ktx = "androidx.fragment:fragment-ktx:$versions.fragment"
+
+deps.core_ktx = "androidx.core:core-ktx:$versions.core_ktx"
+
+deps.material = "com.google.android.material:material:$versions.material"
+
+deps.constraintlayout = "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
+
+deps.swiperefreshlayout = "androidx.swiperefreshlayout:swiperefreshlayout:$versions.swiperefreshlayout"
+
+deps.recyclerview = "androidx.recyclerview:recyclerview:$versions.recyclerview"
+
+deps.viewpager2 = "androidx.viewpager2:viewpager2:$versions.viewpager2"
+
+deps.fresco = "com.facebook.fresco:fresco:$versions.fresco"
+
+deps.slidinguppanel = "com.sothree.slidinguppanel:library:$versions.slidinguppanel"
+
+deps.easing = "it.sephiroth.android.library.easing:android-easing:$versions.easing"
+
+deps.ultraviewpager = "com.alibaba.android:ultraviewpager:$versions.ultraviewpager"
+
+deps.annotation = "androidx.annotation:annotation:$versions.annotation"
+
+deps.ultraviewpager = "com.alibaba.android:ultraviewpager:$versions.ultraviewpager"
+
+deps.gson = "com.google.code.gson:gson:$versions.gson"
+
+deps.exifinterface = "androidx.exifinterface:exifinterface:$versions.exifinterface"
+
+def moshi = [:]
+moshi.moshi = "com.squareup.moshi:moshi:$versions.moshi"
+moshi.kotlin = "com.squareup.moshi:moshi-kotlin:$versions.moshi"
+moshi.codegen = "com.squareup.moshi:moshi-kotlin-codegen:$versions.moshi"
+deps.moshi = moshi
+
+deps.lottie = "com.airbnb.android:lottie:$versions.lottie"
+
+deps.flexbox = "com.google.android:flexbox:$versions.flexbox"
+
+deps.facebook_sdk = "com.facebook.android:facebook-android-sdk:$versions.facebook"
+deps.kakaolink = "com.kakao.sdk:kakaolink:$versions.kakao"
+deps.kakao_usermgmt = "com.kakao.sdk:usermgmt:$versions.kakao"
+deps.naveridlogin = "com.naver.nid:naveridlogin-android-sdk:$versions.naveridlogin"
+
+deps.crashlytics = "com.google.firebase:firebase-crashlytics-gradle:$versions.crashlytics"
+deps.firebase = "com.google.firebase:firebase-bom:$versions.firebase"
+deps.firebase_messaging = "com.google.firebase:firebase-messaging:$versions.firebase_messaging"
+deps.firebase_core = "com.google.firebase:firebase-core:$versions.firebase_core"
+deps.play_service_auth = "com.google.android.gms:play-services-auth:$versions.playservice"
+
+deps.pickerDialog = "com.github.Ibotta:Supported-Picker-Dialogs:$versions.pickerDialog"
+
+deps.braze = "com.appboy:android-sdk-ui:$versions.braze"
+
+deps.amplitude = "com.amplitude:android-sdk:$versions.amplitude"
+
+deps.facebook = "com.facebook.android:facebook-android-sdk:$versions.facebook"
+
+deps.appsflyer = "com.appsflyer:af-android-sdk:$versions.appsflyer"
+
+deps.installreferrer = "com.android.installreferrer:installreferrer:$versions.installreferrer"
+
+def lifecycle = [:]
+lifecycle.viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"
+lifecycle.livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle"
+lifecycle.runtime = "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
+deps.lifecycle = lifecycle
+
+def navigation = [:]
+navigation.fragment = "androidx.navigation:navigation-fragment:$versions.navigation"
+navigation.fragment_ktx = "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
+navigation.runtime_ktx = "androidx.navigation:navigation-runtime-ktx:$versions.navigation"
+navigation.ui = "androidx.navigation:navigation-ui:$versions.navigation"
+navigation.ui_ktx = "androidx.navigation:navigation-ui-ktx:$versions.navigation"
+navigation.safe_args = "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"
+deps.navigation = navigation
+
+deps.timber = "com.jakewharton.timber:timber:$versions.timber_version"
+
+def koin = [:]
+koin.core = "io.insert-koin:koin-android:$versions.koin"
+deps.koin = koin
+
+def retrofit = [:]
+retrofit.retrofit = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+retrofit.scalars = "com.squareup.retrofit2:converter-scalars:$versions.retrofit"
+retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+retrofit.moshi = "com.squareup.retrofit2:converter-moshi:$versions.retrofit"
+retrofit.okhttp = "com.squareup.okhttp3:okhttp:$versions.okhttp"
+retrofit.interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
+deps.retrofit = retrofit
+
+def stetho = [:]
+stetho.stetho = "com.facebook.stetho:stetho:$versions.stetho"
+stetho.okhttp3 = "com.facebook.stetho:stetho-okhttp3:$versions.stetho"
+deps.stetho = stetho
+
+def epoxy = [:]
+epoxy.epoxy = "com.airbnb.android:epoxy:$versions.epoxy"
+epoxy.processor = "com.airbnb.android:epoxy-processor:$versions.epoxy"
+epoxy.paging = "com.airbnb.android:epoxy-paging:$versions.epoxy_paging"
+epoxy.paging3 = "com.airbnb.android:epoxy-paging3:$versions.epoxy_paging"
+deps.epoxy = epoxy
+
+def room = [:]
+room.room = "androidx.room:room-runtime:$versions.room"
+room.compiler = "androidx.room:room-compiler:$versions.room"
+room.ktx = "androidx.room:room-ktx:$versions.room"
+deps.room = room
+
+def flowbinding = [:]
+flowbinding.android = "io.github.reactivecircus.flowbinding:flowbinding-android:$versions.flowbinding"
+flowbinding.activity = "io.github.reactivecircus.flowbinding:flowbinding-activity:$versions.flowbinding"
+flowbinding.appcompat = "io.github.reactivecircus.flowbinding:flowbinding-appcompat:$versions.flowbinding"
+flowbinding.core = "io.github.reactivecircus.flowbinding:flowbinding-core:$versions.flowbinding"
+flowbinding.drawerlayout = "io.github.reactivecircus.flowbinding:flowbinding-drawerlayout:$versions.flowbinding"
+flowbinding.lifecycle = "io.github.reactivecircus.flowbinding:flowbinding-lifecycle:$versions.flowbinding"
+flowbinding.navigation = "io.github.reactivecircus.flowbinding:flowbinding-navigation:$versions.flowbinding"
+flowbinding.preference = "io.github.reactivecircus.flowbinding:flowbinding-preference:$versions.flowbinding"
+flowbinding.recyclerview = "io.github.reactivecircus.flowbinding:flowbinding-recyclerview:$versions.flowbinding"
+flowbinding.swiperefreshlayout = "io.github.reactivecircus.flowbinding:flowbinding-swiperefreshlayout:$versions.flowbinding"
+flowbinding.viewpager = "io.github.reactivecircus.flowbinding:flowbinding-viewpager:$versions.flowbinding"
+flowbinding.viewpager2 = "io.github.reactivecircus.flowbinding:flowbinding-viewpager2:$versions.flowbinding"
+deps.flowbinding = flowbinding
+
+deps.flowlayout = "com.github.simonebortolin:FlowLayoutManager:$versions.flowlayout"
+deps.flow = "cn.lankton:flowlayout:$versions.flow"
+
+def test = [:]
+test.junit = "junit:junit:$versions.junit_version"
+test.ext_junit = "androidx.test.ext:junit:$versions.ext_junit_version"
+test.espresso = "androidx.test.espresso:espresso-core:$versions.espresso_version"
+test.koin_test = "org.koin:koin-test:$versions.koin_version"
+deps.test = test
+
+ext.deps = deps
+

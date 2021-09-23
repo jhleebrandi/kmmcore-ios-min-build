@@ -1,0 +1,131 @@
+
+CREATE TABLE BookmarkTable (
+  id TEXT AS String NOT NULL PRIMARY KEY,
+  isBookmark INTEGER AS Boolean DEFAULT 0 NOT NULL,
+  dataType TEXT NOT NULL
+);
+
+selectAll:
+SELECT *
+FROM BookmarkTable;
+
+insert:
+INSERT OR REPLACE INTO BookmarkTable(id, isBookmark, dataType)
+VALUES (?, ?, ?);
+
+insertBookmarkObject:
+INSERT OR REPLACE INTO BookmarkTable(id, isBookmark, dataType)
+VALUES ?;
+
+getBookMarkData:
+SELECT * FROM BookmarkTable WHERE dataType = :type AND id = :id;
+
+getBookMarkListData:
+SELECT * FROM BookmarkTable WHERE dataType = :type;
+
+updateBookmark:
+UPDATE BookmarkTable
+SET id = ?, isBookmark = ?, dataType = ?
+WHERE id = ?;
+
+upserBookmark {
+  UPDATE BookmarkTable
+  SET isBookmark = :isBookmark, dataType = :dataType
+  WHERE id = :id;
+
+  INSERT OR IGNORE INTO BookmarkTable (id, isBookmark, dataType)
+  VALUES(:id, :isBookmark, :dataType);
+}
+
+deleteBookMarkData {
+    DELETE FROM BookmarkTable WHERE dataType = :type;
+}
+
+getBookMarkDataSync:
+SELECT * FROM BookmarkTable WHERE dataType = :type AND id = :id;
+
+removeAllBookmark:
+DELETE FROM BookmarkTable;
+
+CREATE TABLE CategoryTable (
+  primaryKey INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  id INTEGER NOT NULL,
+  name TEXT NOT NULL,
+  nameEng TEXT NOT NULL,
+  nameKor TEXT NOT NULL,
+  imageUrl TEXT NOT NULL,
+  depth INTEGER NOT NULL,
+  orderData INTEGER NOT NULL,
+  parentId INTEGER NOT NULL,
+  productCount INTEGER NOT NULL,
+  rootCategoryName TEXT NOT NULL
+);
+
+getCategoryData:
+SELECT * FROM CategoryTable;
+
+getCategoryDataSynchronous:
+SELECT * FROM CategoryTable;
+
+getCategoryByRootCategoryName:
+SELECT * FROM CategoryTable WHERE rootCategoryName = :rootCategoryName;
+
+getCategoryDataId:
+SELECT * FROM CategoryTable WHERE id = :id;
+
+getRootCategoryNameList:
+SELECT DISTINCT rootCategoryName FROM CategoryTable;
+
+getRootCategoryId:
+SELECT DISTINCT parentId FROM CategoryTable WHERE depth = 2 AND rootCategoryName = :rootCategoryName;
+
+getParentDataFromChild:
+SELECT * FROM CategoryTable WHERE depth = 2 AND parentId = :parentId;
+
+getChildCategoryDataList:
+SELECT * FROM CategoryTable WHERE depth = 3 AND parentId = :parentId;
+
+insertCategoryData:
+INSERT OR REPLACE INTO CategoryTable(id, name, nameEng, nameKor, imageUrl, depth, orderData, parentId, productCount, rootCategoryName)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+deleteCategoryData:
+DELETE FROM CategoryTable;
+
+CREATE TABLE RecentProductTable (
+  _id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  id TEXT NOT NULL,
+  name TEXT NOT NULL,
+  sellerName TEXT NOT NULL,
+  sellerId TEXT NOT NULL,
+  thumbnailUrl TEXT NOT NULL,
+  price TEXT NOT NULL,
+  salePrice TEXT NOT NULL,
+  salePercent TEXT NOT NULL,
+  isSell INTEGER AS Boolean DEFAULT 0 NOT NULL,
+  isPurchased INTEGER AS Boolean DEFAULT 0 NOT NULL,
+  updateTime INTEGER NOT NULL
+);
+
+getCategoryDataInRecentProduct:
+SELECT * FROM RecentProductTable ORDER BY updateTime DESC;
+
+getCategoryDataByOffsetInRecentProduct:
+SELECT * FROM RecentProductTable ORDER BY updateTime DESC LIMIT :limit OFFSET :offset;
+
+getCategoryDataByIdInRecentProduct:
+SELECT * FROM RecentProductTable WHERE id = :id;
+
+insertProductData:
+INSERT OR REPLACE INTO RecentProductTable(id, name, sellerName, sellerId, thumbnailUrl, price, salePrice, salePercent, isSell, isPurchased, updateTime)
+VALUES ?;
+
+updateProductData:
+INSERT OR REPLACE INTO RecentProductTable(id, name, sellerName, sellerId, thumbnailUrl, price, salePrice, salePercent, isSell, isPurchased, updateTime)
+VALUES ?;
+
+deleteProductDataInRecentProduct:
+DELETE FROM RecentProductTable WHERE id = :id;
+
+deleteProductDataAllInRecentProduct:
+DELETE FROM RecentProductTable;
